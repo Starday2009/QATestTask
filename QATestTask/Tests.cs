@@ -39,15 +39,16 @@ namespace QATestTask
             home.enterLogin("qwerty123@qwerty123.com");
             home.enterPassword("qwerty123");
             home.tapLoginInApp();
-
+           
         }
         public void createTodo()
         {
             todoPage todoPage = new todoPage(driver);
+            todoPage.waitForTodoPage();
             todoPage.clickAddTaskButton();
             todoPage.inputTodoInField("Todo me");
             todoPage.clickAddFillTaskButton();
-            //need to check added task     
+            todoPage.checkAddedTask();
 
         }
 
@@ -55,7 +56,7 @@ namespace QATestTask
         {
             todoPage todoPage = new todoPage(driver);
             todoPage.clickCheckBoxForTask();
-            //need to check deleted task     
+            todoPage.checkAddedTaskDeleted(); 
 
         }
         public void TearDown()

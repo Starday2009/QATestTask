@@ -22,15 +22,15 @@ namespace QATestTask.PageObject
             return this;
         }
 
-        public HomePage enterLogin()
+        public HomePage enterLogin(string email)
         {
-            driver.FindElement(loginField).SendKeys("qwerty123@qwerty123.com");
+            driver.FindElement(loginField).SendKeys(email);
             return this;
         }
 
-        public HomePage enterPassword()
+        public HomePage enterPassword(string password)
         {
-            driver.FindElement(passwordField).SendKeys("qwerty123");
+            driver.FindElement(passwordField).SendKeys(password);
             return this;
         }
 
